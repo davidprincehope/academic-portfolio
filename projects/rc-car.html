@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Obstacle Avoidance Robot - A basic robotics project using dual ultrasonic sensors for navigation and obstacle avoidance." />
+    <title>Obstacle Avoidance Robot - [Your Name]</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/dark-mode.css" />
+    <link rel="stylesheet" href="../css/color-enhancements.css" />
+    <style>
+        .section-header h1 {
+            font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+        }
+
+        .section-header h2 {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .main table {
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        @media (max-width: 1024px) {
+            .section-header>div {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 1.25rem !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-header>div {
+                grid-template-columns: 1fr !important;
+            }
+
+            #toc-layout {
+                grid-template-columns: 1fr !important;
+                gap: 1.25rem !important;
+            }
+
+            #toc-layout aside {
+                position: static !important;
+                top: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div data-include="../partials/header-projects.html"></div>
+    <main class="container layout">
+        <div data-include="../partials/sidebar.html"></div>
+        <section class="main">
+            <header class="section-header fade-in">
+                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: center;">
+                    <div>
+                        <h1 style="color: var(--color-primary); margin-bottom: 0.5rem;">Obstacle Avoidance Robot</h1>
+                        <h2 style="color: var(--color-muted); font-weight: 400; margin-bottom: 1rem;">
+                            Project Summary </h2>
+                        <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                            This is a basic robotics project where I built a mobile robot that avoids obstacles using
+                            two ultrasonic sensors. It's a learning exercise to practice embedded systems, sensor use,
+                            and simple programming for navigation. The robot uses the sensors to check space on the left
+                            and right, helping it turn based on available clearance.
+                        </p>
+
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+                            <div>
+                                <strong style="color: var(--color-primary);">Contributor:</strong><br>
+                                <span>David Prince Hope </span>
+                            </div>
+                            <div>
+                                <strong style="color: var(--color-primary);">Date:</strong><br>
+                                <span>August</span>
+                            </div>
+                            <div>
+                                <strong style="color: var(--color-primary);">GitHub:</strong><br>
+                                <a href="https://github.com/davidprincehope/Obstacle-Avoidance-Robot-" target="_blank"
+                                    rel="noopener" style="color: var(--color-primary);">View
+                                    Repository →</a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <strong style="color: var(--color-primary); margin-bottom: 0.5rem; display: block;">Tech
+                                Used:</strong>
+                            <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.95rem;">
+                                <div>C/C++, Arduino</div>
+                                <div>Robotics, Sensors</div>
+                                <div>Motor Control, Basic Navigation</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="justify-self: center;"></div>
+                </div>
+            </header>
+
+            <div id="toc-layout" style="display: grid; grid-template-columns: 300px 1fr; gap: 2rem; margin-top: 2rem;">
+                <!-- Table of Contents -->
+                <aside class="card" style="height: fit-content; position: sticky; top: 100px;">
+                    <h3 style="color: var(--color-primary); margin-bottom: 1rem;">Table of Contents</h3>
+                    <nav style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <a href="#main-goals"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">🎯
+                            Main Goals</a>
+                        <a href="#how-it-works"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">🔧
+                            How It Works</a>
+                        <a href="#hardware"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">🏗️
+                            Hardware</a>
+                        <a href="#dev-images"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">📸
+                            Development Images</a>
+                        <a href="#demo-videos"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">🎥
+                            Demo Videos</a>
+                    </nav>
+                </aside>
+
+                <!-- Main Content -->
+                <div>
+                    <section id="main-goals" class="card fade-in">
+                        <h2>🎯 Main Goals</h2>
+                        <p>The project focuses on using dual sensors to provide awareness of obstacles on both sides,
+                            enabling the robot to navigate in cluttered areas. This serves as a practical exercise in
+                            beginner robotics, with potential applications in areas like farming or simple automation.
+                        </p>
+                    </section>
+
+                    <section id="how-it-works" class="card fade-in">
+                        <h2>🔧 How It Works</h2>
+                        <ul>
+                            <li><strong>Sensors:</strong> Two HC-SR04 sensors on the front corners, angled for wide
+                                coverage. They measure distances by timing sound echoes.</li>
+                            <li><strong>Decision Making:</strong> The Arduino code compares distances:
+                                <ul>
+                                    <li>If blocked on both sides, turn to the clearer side.</li>
+                                    <li>If blocked on one side, turn away.</li>
+                                    <li>Stop if too close (under 20 cm), slow down if nearby (30-40 cm), go full speed
+                                        if clear.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Motors:</strong> Two DC motors with an L298N driver for moving forward, turning,
+                                or stopping. Speed adjusts based on distance.</li>
+                            <li><strong>Extras:</strong> Simple filters to ignore sensor noise, handles stuck situations
+                                by turning around, runs in a loop.</li>
+                        </ul>
+                    </section>
+
+                    <section id="hardware" class="card fade-in">
+                        <h2>🏗️ Hardware</h2>
+                        <ul>
+                            <li><strong>Controller:</strong> Arduino Uno.</li>
+                            <li><strong>Sensors:</strong> 2x HC-SR04.</li>
+                            <li><strong>Driver:</strong> L298N.</li>
+                            <li><strong>Motors:</strong> 2x DC motors.</li>
+                            <li><strong>Base:</strong> Wheeled chassis with separate power for electronics and motors.
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section id="dev-images" class="card fade-in">
+                        <h2>📸 Development Images</h2>
+                        <div class="gallery">
+                            <a href="#img1"><img src="/data/Obstacle Avoidance/1.jpg" alt="Chassis build" /></a>
+                            <a href="#img2"><img src="/data/Obstacle Avoidance/2.jpg" alt="Sensor mounting" /></a>
+                            <a href="#img3"><img src="/data/Obstacle Avoidance/3.jpg" alt="Electronics wiring" /></a>
+                            <a href="#img4"><img src="/data/Obstacle Avoidance/4.jpg" alt="Final assembly" /></a>
+                        </div>
+                    </section>
+
+                    <section id="demo-videos" class="card fade-in">
+                        <h2>🎥 Demo Videos</h2>
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+                            <div>
+                                <div
+                                    style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-md);">
+                                    <iframe src="https://www.youtube.com/embed/5WBcDB-bR64"
+                                        title="Obstacle Avoidance Robot Demo" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen
+                                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="github" class="card fade-in">
+                        <h2>🔗 GitHub</h2>
+                        <p>Explore the code, issues, and updates on GitHub. You can also download the full project ZIP.
+                        </p>
+                        <div style="display:flex; gap: 1rem; flex-wrap: wrap;">
+                            <a href="https://github.com/davidprincehope/Obstacle-Avoidance-Robot-" target="_blank"
+                                class="btn btn-primary">View Repository →</a>
+                            <a href="https://github.com/davidprincehope/Obstacle-Avoidance-Robot-/archive/refs/heads/main.zip"
+                                target="_blank" class="btn">Download Full Project ZIP</a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div data-include="../partials/footer-nested.html"></div>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

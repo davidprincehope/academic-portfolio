@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Autonomous Face-Tracking Turret — Real-time vision-based pan-tilt system with PID control and smooth tracking" />
+    <title>Autonomous Face-Tracking Turret — David Prince Hope</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/dark-mode.css" />
+    <link rel="stylesheet" href="../css/color-enhancements.css" />
+    <style>
+        .section-header h1 {
+            font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+        }
+
+        .section-header h2 {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .main table {
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        @media (max-width: 1024px) {
+            .section-header>div {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 1.25rem !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-header>div {
+                grid-template-columns: 1fr !important;
+            }
+
+            #toc-layout {
+                grid-template-columns: 1fr !important;
+                gap: 1.25rem !important;
+            }
+
+            #toc-layout aside {
+                position: static !important;
+                top: auto !important;
+                margin-bottom: 1rem !important;
+            }
+
+            /* Ensure sidebar profile card has clear separation when stacked */
+            [data-include="../partials/sidebar.html"] {
+                margin-bottom: 1.25rem !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div data-include="../partials/header-projects.html"></div>
+    <main class="container layout">
+        <div data-include="../partials/sidebar.html"></div>
+        <section class="main">
+            <header class="section-header fade-in">
+                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: center;">
+                    <div>
+                        <h1 style="color: var(--color-primary); margin-bottom: 0.5rem;">
+                            Autonomous Face-Tracking Turret
+                        </h1>
+                        <h2 style="color: var(--color-muted); font-weight: 400; margin-bottom: 1rem;">
+                            Real-Time Vision-Based Target Tracking System
+                        </h2>
+                        <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                            An intelligent pan-tilt turret that uses computer vision and control algorithms to
+                            autonomously track and follow human faces with smooth, natural motion.
+                        </p>
+
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+                            <div>
+                                <strong style="color: var(--color-primary);">Contributors:</strong><br>
+                                <span>David Prince Hope<br>Olodepo Teslim</span>
+                            </div>
+                            <div>
+                                <strong style="color: var(--color-primary);">Published:</strong><br>
+                                <span>2025</span>
+                            </div>
+                            <div>
+                                <strong style="color: var(--color-primary);">Institution:</strong><br>
+                                <span>Airforce Institute of Technology, Kaduna, Nigeria</span>
+                            </div>
+                            <div>
+                                <strong style="color: var(--color-primary);">GitHub:</strong><br>
+                                <a href="https://github.com/davidprincehope/Face-Tracking-Turret-" target="_blank"
+                                    rel="noopener" style="color: var(--color-primary);">Face tracking turret with
+                                    ESP32-CAM and MG966R servos →</a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <strong style="color: var(--color-primary); margin-bottom: 0.5rem; display: block;">
+                                Skills &amp; Technologies:
+                            </strong>
+                            <div style="font-size: 0.95rem;">Python • C/C++ • MediaPipe • OpenCV • PID Control • ESP32 •
+                                Arduino • Computer Vision • Embedded Systems</div>
+                        </div>
+                    </div>
+                    <div style="justify-self: center;">
+                        <img src="/data/Automated Turret/Automated Turret.jpg" alt="Autonomous Face-Tracking Turret"
+                            style="width: 100%; max-width: 520px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);" />
+                    </div>
+                </div>
+            </header>
+
+            <div id="toc-layout" style="display: grid; grid-template-columns: 300px 1fr; gap: 2rem; margin-top: 2rem;">
+                <!-- Table of Contents -->
+                <aside class="card" style="height: fit-content; position: sticky; top: 100px;">
+                    <h3 style="color: var(--color-primary); margin-bottom: 1rem;">Table of Contents</h3>
+                    <nav style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <a href="#challenge"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">🎯
+                            The Challenge</a>
+                        <a href="#what-i-built"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">🔧
+                            What I Built</a>
+                        <a href="#system-architecture"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">🏗️
+                            System Architecture</a>
+                        <a href="#system-vision"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">•
+                            Vision Processing Pipeline</a>
+                        <a href="#system-pid"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">•
+                            Dual-Axis PID Control</a>
+                        <a href="#system-ema"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">•
+                            EMA Smoothing</a>
+                        <a href="#system-rate"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">•
+                            Additional Rate Limiting</a>
+                        <a href="#system-deadzone"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">•
+                            Dead Zone Logic</a>
+                        <a href="#system-comm"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">•
+                            Communication Architecture</a>
+                        <a href="#system-throttle"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">•
+                            Servo Update Rate Throttling</a>
+                        <a href="#technical-challenge"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">⚠️
+                            Technical Challenge: Making It Smooth</a>
+                        <a href="#dev-images"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">📸
+                            Development Images</a>
+                        <a href="#demo-videos"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">🎥
+                            Demo Videos</a>
+                        <a href="#project-files"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">📁
+                            Project Files</a>
+                    </nav>
+                </aside>
+
+                <!-- Main Content -->
+                <div>
+
+                    <!-- The Challenge -->
+                    <section id="challenge" class="card fade-in">
+                        <h2>🎯 The Challenge</h2>
+                        <p>
+                            Autonomous tracking systems are everywhere—from security cameras that follow subjects to
+                            defense systems that lock onto targets. Most commercial solutions are closed and expensive.
+                            I wanted to understand how to build one: detect a face in real time, compute its position
+                            relative to frame center, and smoothly control servos to keep it centered without jitter.
+                        </p>
+                        <p>
+                            Core challenges included low‑latency face detection, smooth servo control without
+                            oscillation, practical PID tuning, a dead zone to avoid micro‑corrections, and robust
+                            communication between the vision loop and the turret.
+                        </p>
+                    </section>
+
+                    <!-- What I Built -->
+                    <section id="what-i-built" class="card fade-in">
+                        <h2>🔧 What I Built</h2>
+                        <p>
+                            I developed an autonomous pan‑tilt turret that uses MediaPipe face detection and dual‑axis
+                            PID control to track faces in real time with smooth, human‑like motion. The ESP32‑CAM
+                            streams
+                            video to a host PC running the vision pipeline; independent PID controllers for pan and tilt
+                            generate servo commands to keep the target centered.
+                        </p>
+                        <p><strong>Key innovations:</strong></p>
+                        <ul>
+                            <li>Dual‑PID architecture (independent pan/tilt controllers)</li>
+                            <li>Exponential Moving Average smoothing to eliminate jitter</li>
+                            <li>Adaptive dead zone to reduce micro‑adjustments and wear</li>
+                            <li>Asynchronous, non‑blocking communication between vision and control</li>
+                            <li>Servo update throttling to respect mechanical response</li>
+                        </ul>
+                    </section>
+
+                    <!-- System Architecture (combined for better flow) -->
+                    <section id="system-architecture" class="card fade-in">
+                        <h2>🏗️ System Architecture</h2>
+                        <p>The system architecture seamlessly integrates computer vision for accurate face detection
+                            with sophisticated control mechanisms to ensure smooth and responsive tracking. The process
+                            begins with capturing and processing visual data, which then informs the control algorithms
+                            to adjust the turret's position. Let's explore this flow step by step.</p>
+
+                        <h3 id="system-vision">Vision Processing Pipeline</h3>
+                        <p>The foundation of the system is the vision processing pipeline, which relies on MediaPipe
+                            Face Detection a lightweight, optimized model from Google tailored for real-time performance
+                            on edge devices. This approach outperforms traditional cascade classifiers or heavier neural
+                            networks by delivering high accuracy with low computational demands, making it ideal for our
+                            resource-constrained setup.</p>
+                        <p><strong>Detection Flow:</strong></p>
+                        <ul>
+                            <li>The ESP32-CAM captures frames at 1600×1200 resolution.</li>
+                            <li>These frames are streamed to the host PC via HTTP.</li>
+                            <li>MediaPipe processes the frames to detect all faces.</li>
+                            <li>The system identifies the largest face, assuming it's the closest to the camera.</li>
+                            <li>The center of this face's bounding box serves as the target point.</li>
+                            <li>An error value is calculated as the difference between the frame's center and the target
+                                position.</li>
+                        </ul>
+                        <p><strong>Why the Largest Face?</strong> In scenarios with multiple people, prioritizing the
+                            largest bounding box ensures the system intuitively focuses on the nearest individual,
+                            enhancing practical usability. Once this error is determined, it feeds into the control
+                            layer to guide the turret's movements.</p>
+
+                        <h3 id="system-pid">Dual-Axis PID Control</h3>
+                        <p>With the positional error from the vision pipeline in hand, the system employs dual-axis PID
+                            control to translate this data into precise servo adjustments. Separate PID controllers for
+                            pan and tilt axes ensure independent yet coordinated operation, allowing for nuanced
+                            corrections in both horizontal and vertical planes.</p>
+                        <p><strong>PID Equation:</strong></p>
+                        <pre><code>output = Kp × error + Ki × ∫error dt + Kd × (d(error)/dt)</code></pre>
+                        <ul>
+                            <li><strong>Proportional (Kp = 0.001):</strong> Scales the response based on the current
+                                error's magnitude for immediate correction.</li>
+                            <li><strong>Integral (Ki = 0.1):</strong> Accumulates past errors to eliminate persistent
+                                offsets, ensuring long-term accuracy.</li>
+                            <li><strong>Derivative (Kd = 2.0):</strong> Anticipates future errors by considering the
+                                rate of change, which helps prevent overshooting and oscillations.</li>
+                        </ul>
+                        <p>These carefully tuned parameters provide a balanced response, but to further refine the
+                            output and combat inherent noise in real-time systems, additional smoothing is applied.</p>
+
+                        <h3 id="system-ema">Smoothing Algorithm: Exponential Moving Average</h3>
+                        <p>While the PID controllers generate effective corrections, their raw outputs can introduce
+                            high-frequency jitter, leading to servo twitching and unnecessary noise. To mitigate this, I
+                            incorporated an Exponential Moving Average (EMA) filter, which smooths the angle commands by
+                            weighting recent values more heavily while incorporating historical data for stability.</p>
+                        <pre><code>smoothed_angle = α × current_angle + (1 - α) × previous_smoothed_angle</code></pre>
+                        <p>This smoothing creates more natural, fluid motions reminiscent of human eye tracking, where
+                            discrete inputs are blended into seamless perception. However, even smoothed outputs can
+                            sometimes result in abrupt changes during large errors, so further safeguards are
+                            implemented.</p>
+
+                        <h3 id="system-rate">Additional Rate Limiting</h3>
+                        <p>To prevent sudden, jarring movements that could strain the hardware, I added rate limiting on
+                            top of the EMA. This clamps the maximum allowable angle change per update:</p>
+                        <pre><code># python
+max_angle_change_per_update = 5°
+</code></pre>
+                        <p>By restricting how much the servo angles can shift in a single cycle, the system ensures
+                            gradual adjustments that blend new corrections with ongoing movements. This complements the
+                            EMA by adding an extra layer of mechanical protection, but for optimal efficiency, we also
+                            need to handle cases where no adjustment is necessary.</p>
+
+                        <h3 id="system-deadzone">Dead Zone Logic</h3>
+                        <p>When the target face is already close to the frame's center, incessant minor tweaks can waste
+                            energy and create subtle vibrations. To address this, a dead zone is defined—a small
+                            tolerance area where the error is deemed negligible, and no servo commands are issued.</p>
+                        <p><strong>Dead Zone Threshold:</strong> ±8% of frame dimension</p>
+                        <pre><code># python
+if abs(normalized_error_x) &lt; DEAD_ZONE:
+    # Pan axis: no correction needed
+    in_dead_zone_pan = True
+    
+if abs(normalized_error_y) &lt; DEAD_ZONE:
+    # Tilt axis: no correction needed
+    in_dead_zone_tilt = True
+</code></pre>
+                        <p>This logic promotes stability and reduces wear, integrating smoothly with the communication
+                            system to signal when updates can be skipped.</p>
+
+                        <h3 id="system-comm">Communication Architecture</h3>
+                        <p>Bridging the vision and control components is an asynchronous serial protocol, leveraging
+                            Python's asyncio for non-blocking operations. This ensures that the high-speed vision loop
+                            isn't hindered by slower hardware interactions.</p>
+                        <p><strong>Asynchronous Serial Protocol:</strong></p>
+                        <pre><code># Pan command format: "pan:X\n" where X = angle (0-180°)
+await robot.set_pan_angle(angle)
+
+# Tilt command format: "tilt:Y\n" where Y = angle (0-170°)
+await robot.set_tilt_angle(angle)
+
+# Dead zone signal: "deadzone\n"
+await robot.set_deadband(True)
+</code></pre>
+                        <p><strong>Why Asynchronous?</strong> Traditional synchronous communication would stall the
+                            vision processing during servo responses, reducing frame rates. Async I/O allows parallel
+                            execution, maintaining system responsiveness. To further optimize this, command frequency is
+                            carefully managed.</p>
+
+                        <h3 id="system-throttle">Servo Update Rate Throttling</h3>
+                        <p>Servos possess inherent mechanical inertia, and bombarding them with rapid commands can lead
+                            to inefficiency or overheating. Throttling the update rate addresses this by limiting how
+                            often new positions are sent:</p>
+                        <p><strong>Servo Update Interval:</strong> 200ms (5 Hz)</p>
+                        <pre><code># python
+if current_time - last_servo_update_time &gt;= 0.2:
+    # Send new servo commands
+    last_servo_update_time = current_time
+</code></pre>
+                        <p>This decoupling of the fast vision frame rate (~20-30 FPS) from the slower servo updates
+                            enables smooth tracking without overtaxing the hardware. Collectively, these interconnected
+                            elements from vision to control, smoothing, limiting, and communication form a robust,
+                            efficient architecture that delivers precise, jitter-free performance.</p>
+                    </section>
+
+                    <section id="demo-videos" class="card fade-in">
+                        <h2>🎥 Demo Videos</h2>
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+                            <div>
+                                <div
+                                    style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-md);">
+                                    <iframe src=" https://www.youtube.com/embed/KQr05-A-9HA"
+                                        title="Emergency detection → instant green override" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen
+                                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Project Files -->
+                    <section id="project-files" class="card fade-in">
+                        <h2>📁 Project Files</h2>
+                        <p>
+                            Source code and documentation are available on GitHub:
+                            <a href="https://github.com/davidprincehope/Face-Tracking-Turret-" target="_blank"
+                                rel="noopener"
+                                style="color: var(--color-primary);">davidprincehope/Face-Tracking-Turret-</a>
+                        </p>
+                    </section>
+
+                    <footer style="margin-top: 2rem; font-size: 0.9rem; color: var(--color-muted); text-align: center;">
+                        <p><strong>Thanks:</strong> Engr Sheshi, family, AFIT Kaduna</p>
+                    </footer>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer" aria-label="Website footer">
+    <div class="site-footer__inner">
+        <div class="site-footer__brand">
+            <a href="../index.html" class="site-footer__logo" aria-label="Home">
+                <span class="site-footer__logo-mark">●</span>
+                <span class="site-footer__logo-text">David Prince Hope</span>
+            </a>
+            <p class="site-footer__tagline">Mechatronics • AI • Robotics</p>
+            <nav class="site-footer__socials" aria-label="Social links">
+                <a href="https://github.com/davidprincehope" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub" class="site-footer__icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.38 7.86 10.9.58.11.79-.25.79-.55v-2.1c-3.2.7-3.87-1.36-3.87-1.36-.53-1.35-1.3-1.7-1.3-1.7-1.06-.73.08-.72.08-.72 1.18.08 1.8 1.2 1.8 1.2 1.04 1.79 2.73 1.27 3.4.97.1-.75.4-1.26.72-1.55-2.55-.29-5.22-1.27-5.22-5.64 0-1.25.45-2.26 1.2-3.05-.12-.29-.52-1.44.12-3.01 0 0 .98-.31 3.2 1.19.92-.25 1.9-.39 2.88-.39s1.96.14 2.88.39c2.22-1.5 3.2-1.19 3.2-1.19.64 1.57.24 2.72.12 3.01.75.79 1.2 1.8 1.2 3.05 0 4.38-2.68 5.35-5.24 5.63.42.36.8 1.08.8 2.19v2.9c0 .31.21.67.8.55A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn" class="site-footer__icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M20.45 20.45h-3.55v-5.6c0-1.34-.02-3.05-1.86-3.05-1.86 0-2.14 1.45-2.14 2.95v5.7H9.35V9h3.4v1.56h.05c.47-.9 1.61-1.86 3.31-1.86 3.54 0 4.19 2.33 4.19 5.35v6.4zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/>
+                    </svg>
+                </a>
+                <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter/X" title="Twitter/X" class="site-footer__icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M1.8 2h5.1l4.12 6L16.57 2h5.1l-7.43 9.04L22.4 22h-5.1l-4.47-6.51L7.9 22H2.8l7.92-10.12L1.8 2z"/>
+                    </svg>
+                </a>
+            </nav>
+        </div>
+        <div class="site-footer__cols">
+            <nav class="site-footer__col" aria-label="More">
+                <h3 class="site-footer__heading">More</h3>
+                <ul class="site-footer__links">
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../research.html">Research</a></li>
+                    <li><a href="../certifications.html">Certifications</a></li>
+                    <li><a href="../awards.html">Awards</a></li>
+                    <li><a href="../volunteering.html">Volunteering</a></li>
+                </ul>
+            </nav>
+            <nav class="site-footer__col" aria-label="Projects">
+                <h3 class="site-footer__heading">Projects</h3>
+                <ul class="site-footer__links">
+                    <li><a href="./aeroflow-traffic.html">Smart Traffic System</a></li>
+                    <li><a href="./">All Projects</a></li>
+                </ul>
+            </nav>
+            <nav class="site-footer__col" aria-label="Articles">
+                <h3 class="site-footer__heading">Articles</h3>
+                <ul class="site-footer__links">
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../blog/future-computer-vision-african-robotics.html">Computer Vision in African Robotics</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="site-footer__bottom">
+        <p>&copy; <span id="footer-year"></span> David Prince Hope. All rights reserved.</p>
+        <p style="margin-top:0.25rem;font-size:0.85rem;">
+            <a href="../contact.html" style="color:inherit;">Contact</a> • 
+            <a href="#" style="color:inherit;">Privacy</a> • 
+            <a href="#" style="color:inherit;">Terms</a>
+        </p>
+    </div>
+</footer>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>
+

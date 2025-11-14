@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Contact Jane Doe: email, office, and meeting availability." />
+    <title>Contact — Jane Doe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/dark-mode.css" />
+    <link rel="stylesheet" href="css/color-enhancements.css" />
+</head>
+
+<body>
+    <div data-include="partials/header.html"></div>
+    <main class="container layout">
+        <div data-include="partials/sidebar.html"></div>
+        <section class="main">
+            <header class="section-header fade-in">
+                <h1>Contact</h1>
+            </header>
+            <div class="card fade-in" aria-label="Contact details">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                    <div>
+                        <h3 style="color: var(--color-primary); margin-bottom: 1rem;">Contact Information</h3>
+                        <p><strong>📧 Email:</strong> <a href="mailto:davidprincehope@gmail.com"
+                                style="color: var(--color-primary);">davidprincehope@gmail.com</a></p>
+                        <p><strong>📱 Phone:</strong> +234 815 620 7046</p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--color-primary); margin-bottom: 1rem;">Connect With Me</h3>
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                            <a class="btn" href="mailto:davidprincehope@gmail.com" target="_blank" rel="noopener"
+                                style="display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                                </svg>
+                                Email
+                            </a>
+                            <a class="btn" href="https://www.linkedin.com/in/david-prince-lanre4pf" target="_blank" rel="noopener"
+                                style="display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.45 20.45h-3.55v-5.6c0-1.34-.02-3.05-1.86-3.05-1.86 0-2.14 1.45-2.14 2.95v5.7H9.35V9h3.4v1.56h.05c.47-.9 1.61-1.86 3.31-1.86 3.54 0 4.19 2.33 4.19 5.35v6.4zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
+                                </svg>
+                                LinkedIn
+                            </a>
+                            <a class="btn" href="https://github.com/davidprincehope" target="_blank" rel="noopener"
+                                style="display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                                GitHub
+                            </a>
+                            <a class="btn" href="https://twitter.com/davidprincehope" target="_blank" rel="noopener"
+                                style="display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                </svg>
+                                Twitter/X
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="section card fade-in" aria-label="Contact form">
+                <h2>Send a Message</h2>
+                <form action="#" method="post" onsubmit="const n=document.getElementById('name').value||'';const e=document.getElementById('email').value||'';const m=document.getElementById('message').value||'';const url=`https://mail.google.com/mail/?view=cm&fs=1&to=davidprincehope@gmail.com&su=${encodeURIComponent('Website Contact from '+n)}&body=${encodeURIComponent('From: '+n+' <'+e+'>\n\n'+m)}`;window.open(url,'_blank');return false" aria-describedby="form-note">
+                    <div class="grid" style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;">
+                        <div>
+                            <label for="name">Name</label>
+                            <input id="name" name="name" type="text" required
+                                style="width:100%;padding:.6rem;border:1px solid var(--color-border);border-radius:8px;background:transparent;color:inherit;" />
+                        </div>
+                        <div>
+                            <label for="email">Email</label>
+                            <input id="email" name="email" type="email" required
+                                style="width:100%;padding:.6rem;border:1px solid var(--color-border);border-radius:8px;background:transparent;color:inherit;" />
+                        </div>
+                    </div>
+                    <div style="margin-top:.75rem;">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required
+                            style="width:100%;padding:.6rem;border:1px solid var(--color-border);border-radius:8px;background:transparent;color:inherit;"></textarea>
+                    </div>
+                    <p id="form-note" class="muted" style="margin:.5rem 0 0;">This form is static for demo; no data is
+                        submitted.</p>
+                    <div style="margin-top:.75rem;">
+                        <button class="btn btn-primary" type="submit">Send</button>
+                    </div>
+                </form>
+            </section>
+        </section>
+    </main>
+    <footer class="site-footer" aria-label="Website footer">
+    <div class="site-footer__inner">
+        <div class="site-footer__brand">
+            <a href="index.html" class="site-footer__logo" aria-label="Home">
+                <span class="site-footer__logo-mark">●</span>
+                <span class="site-footer__logo-text">David Prince Hope</span>
+            </a>
+            <p class="site-footer__tagline">Mechatronics • AI • Robotics</p>
+
+            <nav class="site-footer__socials" aria-label="Social links">
+                <a href="https://github.com/davidprincehope" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub" class="site-footer__icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.38 7.86 10.9.58.11.79-.25.79-.55v-2.1c-3.2.7-3.87-1.36-3.87-1.36-.53-1.35-1.3-1.7-1.3-1.7-1.06-.73.08-.72.08-.72 1.18.08 1.8 1.2 1.8 1.2 1.04 1.79 2.73 1.27 3.4.97.1-.75.4-1.26.72-1.55-2.55-.29-5.22-1.27-5.22-5.64 0-1.25.45-2.26 1.2-3.05-.12-.29-.52-1.44.12-3.01 0 0 .98-.31 3.2 1.19.92-.25 1.9-.39 2.88-.39s1.96.14 2.88.39c2.22-1.5 3.2-1.19 3.2-1.19.64 1.57.24 2.72.12 3.01.75.79 1.2 1.8 1.2 3.05 0 4.38-2.68 5.35-5.24 5.63.42.36.8 1.08.8 2.19v2.9c0 .31.21.67.8.55A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn" class="site-footer__icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M20.45 20.45h-3.55v-5.6c0-1.34-.02-3.05-1.86-3.05-1.86 0-2.14 1.45-2.14 2.95v5.7H9.35V9h3.4v1.56h.05c.47-.9 1.61-1.86 3.31-1.86 3.54 0 4.19 2.33 4.19 5.35v6.4zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/>
+                    </svg>
+                </a>
+                <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter/X" title="Twitter/X" class="site-footer__icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M1.8 2h5.1l4.12 6L16.57 2h5.1l-7.43 9.04L22.4 22h-5.1l-4.47-6.51L7.9 22H2.8l7.92-10.12L1.8 2z"/>
+                    </svg>
+                </a>
+            </nav>
+        </div>
+
+        <div class="site-footer__cols">
+            <nav class="site-footer__col" aria-label="More">
+                <h3 class="site-footer__heading">More</h3>
+                <ul class="site-footer__links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="certifications.html">Certifications</a></li>
+                    <li><a href="awards.html">Awards</a></li>
+                    <li><a href="volunteering.html">Volunteering</a></li>
+                </ul>
+            </nav>
+
+            <nav class="site-footer__col" aria-label="Projects">
+                <h3 class="site-footer__heading">Projects</h3>
+                <ul class="site-footer__links">
+                    <li><a href="projects/aeroflow-traffic.html">Smart Traffic System</a></li>
+                    <li><a href="research.html#projects">All Projects</a></li>
+                </ul>
+            </nav>
+
+            <nav class="site-footer__col" aria-label="Articles">
+                <h3 class="site-footer__heading">Articles</h3>
+                <ul class="site-footer__links">
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="blog/future-computer-vision-african-robotics.html">Computer Vision in African Robotics</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="site-footer__bottom">
+        <p>&copy; <span id="footer-year"></span> David Prince Hope. All rights reserved.</p>
+        <p style="margin-top:0.25rem;font-size:0.85rem;">
+            <a href="contact.html" style="color:inherit;">Contact</a> • 
+            <a href="#" style="color:inherit;">Privacy</a> • 
+            <a href="#" style="color:inherit;">Terms</a>
+        </p>
+    </div>
+</footer>
+    <script src="js/main.js" defer></script>
+</body>
+
+</html>

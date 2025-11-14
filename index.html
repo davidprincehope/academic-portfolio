@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="David Prince Hope - Mechatronics Engineer specializing in AI, robotics, and embedded systems. Explore my research, projects, and contributions to intelligent robotic systems." />
+    <title>Home — David Prince Hope</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dark-mode.css" />
+    <link rel="stylesheet" href="css/color-enhancements.css" />
+    <style>
+        /* Page-scoped thumbnail styles for Featured Projects */
+        .preview-media {
+            width: 100%;
+            height: 160px;
+            overflow: hidden;
+            border-bottom: 1px solid var(--color-border);
+            background: var(--color-accent);
+        }
+
+        .preview-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .preview-icon svg {
+            transform: scale(1.25);
+            transform-origin: center;
+            display: inline-block;
+        }
+        .site-footer__icon svg {
+            transform: scale(1.2);
+            transform-origin: center;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div data-include="partials/header.html"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero__inner">
+            <div class="hero__content">
+                <h1 class="hero__title">David Prince Hope</h1>
+                <p class="hero__subtitle">Mechatronics Engineer | AI & Robotics Researcher</p>
+                <p class="hero__description">
+                    Passionate about developing intelligent robotic systems for hazardous environments,
+                    implementing computer vision on edge devices, and advancing embedded AI solutions. Graduated with a
+                    first class degree in Mechatronics Engineering from the Airforce Institute of Technology
+                </p>
+                <div class="hero__actions">
+                    <a href="about.html" class="btn btn-primary">Learn More</a>
+                    <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preview Sections -->
+    <main class="container home-sections">
+        <section class="section-preview fade-in">
+            <div class="preview-header">
+                <h2>About Me</h2>
+                <a href="about.html" class="preview-link">View Full Profile →</a>
+            </div>
+            <div class="preview-grid">
+                <div class="preview-card">
+                    <div class="preview-icon">
+                        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" role="img">
+                            <path d="M2 8l10-4 10 4-10 4L2 8z" fill="currentColor"/>
+                            <path d="M6 11v3c0 2 4 3 6 3s6-1 6-3v-3" fill="none" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Education</h3>
+                    <p>B.Eng. Mechatronics Engineering, First Class Honours (4.71/5.00) from Air Force Institute of
+                        Technology</p>
+                </div>
+                <div class="preview-card">
+                    <div class="preview-icon">
+                        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" role="img">
+                            <circle cx="10" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 12l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M15 3v4m0 0h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Research Focus</h3>
+                    <p>Computer Vision for Robotics, Embedded AI, and Intelligent Systems for Hazardous Environments</p>
+                </div>
+                <div class="preview-card">
+                    <div class="preview-icon">
+                        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" role="img">
+                            <rect x="3" y="7" width="18" height="12" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M3 12h18" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Experience</h3>
+                    <p>Robotics Engineer, AI Research Intern, and STEM Education Volunteer</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-preview fade-in-delayed">
+            <div class="preview-header">
+                <h2>Featured Research</h2>
+                <a href="research.html" class="preview-link">View All Research →</a>
+            </div>
+            <div class="preview-grid preview-grid--two">
+                <!-- Single article now, add more by appending more preview-card anchors here -->
+                <a href="research.html" class="preview-card preview-card--link">
+                    <div class="preview-badge">Under Review</div>
+                    <h3>Design and Development of an Autonomous IED Detection Robot with Computer Vision</h3>
+                    <p>Prince Hope David, et al. — Journal of Mechatronics and Intelligent Manufacturing</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="section-preview fade-in-delayed-more">
+            <div class="preview-header">
+                <h2>Featured Projects</h2>
+                <a href="research.html#projects" class="preview-link">View All Projects →</a>
+            </div>
+            <div class="preview-grid preview-grid--three">
+
+                <a href="projects/ied-robot.html" class="preview-card preview-card--link">
+                    <div class="preview-media">
+                        <img src="data/ied/rocker bogie.jpg" alt="IED Detection Robot thumbnail" />
+                    </div>
+                    <h3>IED Detection Robot</h3>
+                    <p>Autonomous robot for hazardous environment exploration and threat detection</p>
+                    <div class="preview-tags">
+                        <span class="tag">Robotics</span>
+                        <span class="tag">Autonomous Systems</span>
+                    </div>
+                </a>
+                <a href="projects/aeroflow-traffic.html" class="preview-card preview-card--link">
+                    <div class="preview-media">
+                        <img src="data/WhatsApp Image 2025-10-26 at 22.25.48_04cb8028.jpg"
+                            alt="AeroFlow Traffic System thumbnail" />
+                    </div>
+                    <h3>AeroFlow Traffic System</h3>
+                    <p>AI-powered smart traffic management system using computer vision and IoT</p>
+                    <div class="preview-tags">
+                        <span class="tag">Computer Vision</span>
+                        <span class="tag">IoT</span>
+                    </div>
+                </a>
+
+                <a href="projects/face-turret.html" class="preview-card preview-card--link">
+                    <div class="preview-media">
+                        <img src="data/Automated Turret/Automated Turret.jpg" alt="Face Tracking Turret thumbnail" />
+                    </div>
+                    <h3>Face Tracking Turret</h3>
+                    <p>Real-time face detection and tracking system with servo-controlled turret</p>
+                    <div class="preview-tags">
+                        <span class="tag">Computer Vision</span>
+                        <span class="tag">Embedded Systems</span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <section class="section-preview fade-in">
+            <div class="preview-header">
+                <h2>Latest from Blog</h2>
+                <a href="blog.html" class="preview-link">View All Posts →</a>
+            </div>
+            <div class="preview-grid preview-grid--two">
+                <!-- Single article now, add more by appending more preview-card anchors here -->
+                <a href="blog/ai-healthcare-africa.html" class="preview-card preview-card--link">
+                    <div class="blog-meta">
+                        <span class="blog-date">Recent</span>
+                        <span class="blog-category">Healthcare AI</span>
+                    </div>
+                    <h3>Artificial Intelligence in Solving Africa's Healthcare Challenges</h3>
+                    <p>How AI can enhance diagnostics, improve access, and boost efficiency across healthcare in Africa.
+                    </p>
+                </a>
+            </div>
+        </section>
+
+        <section class="section-preview fade-in-delayed">
+            <div class="preview-header">
+                <h2>Achievements & Recognition</h2>
+            </div>
+            <div class="preview-grid preview-grid--four">
+                <a href="certifications.html" class="preview-card preview-card--compact preview-card--link">
+                    <div class="preview-icon">
+                        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" role="img">
+                            <rect x="4" y="3" width="14" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M8 7h6M8 11h6M8 15h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Certifications</h3>
+                    <p>Professional credentials in AI, robotics, and embedded systems</p>
+                </a>
+                <a href="awards.html" class="preview-card preview-card--compact preview-card--link">
+                    <div class="preview-icon">
+                        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" role="img">
+                            <path d="M6 5h12v2a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V5z" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M8 19h8M10 11v4a2 2 0 0 0 2 2 2 2 0 0 0 2-2v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Awards</h3>
+                    <p>Recognition for academic excellence and innovation</p>
+                </a>
+                <a href="volunteering.html" class="preview-card preview-card--compact preview-card--link">
+                    <div class="preview-icon">
+                        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" role="img">
+                            <path d="M8 12l2 2a3 3 0 0 0 4 0l2-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M3 12l3-3 4 4M21 12l-3-3-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Volunteering</h3>
+                    <p>STEM education and community outreach initiatives</p>
+                </a>
+                <a href="industry.html" class="preview-card preview-card--compact preview-card--link">
+                    <div class="preview-icon">
+                        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" role="img">
+                            <rect x="3" y="7" width="18" height="12" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M3 12h18" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Industry</h3>
+                    <p>Professional experience and collaborations</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="cta-section fade-in">
+            <div class="cta-card">
+                <h2>Let's Work Together</h2>
+                <p>I'm actively seeking graduate opportunities and research roles in AI, robotics, and computer vision.
+                    Let's connect and explore how we can collaborate.</p>
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn btn-primary">Contact Me</a>
+                    <button id="view-cv-btn" class="btn btn-outline" type="button">View CV</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" aria-label="Website footer">
+        <div class="site-footer__inner">
+            <div class="site-footer__brand">
+                <a href="index.html" class="site-footer__logo" aria-label="Home">
+                    <span class="site-footer__logo-mark">●</span>
+                    <span class="site-footer__logo-text">David Prince Hope</span>
+                </a>
+                <p class="site-footer__tagline">Mechatronics • AI • Robotics</p>
+
+                <nav class="site-footer__socials" aria-label="Social links">
+                    <a href="https://github.com/davidprincehope" target="_blank" rel="noopener" aria-label="GitHub"
+                        title="GitHub" class="site-footer__icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.38 7.86 10.9.58.11.79-.25.79-.55v-2.1c-3.2.7-3.87-1.36-3.87-1.36-.53-1.35-1.3-1.7-1.3-1.7-1.06-.73.08-.72.08-.72 1.18.08 1.8 1.2 1.8 1.2 1.04 1.79 2.73 1.27 3.4.97.1-.75.4-1.26.72-1.55-2.55-.29-5.22-1.27-5.22-5.64 0-1.25.45-2.26 1.2-3.05-.12-.29-.52-1.44.12-3.01 0 0 .98-.31 3.2 1.19.92-.25 1.9-.39 2.88-.39s1.96.14 2.88.39c2.22-1.5 3.2-1.19 3.2-1.19.64 1.57.24 2.72.12 3.01.75.79 1.2 1.8 1.2 3.05 0 4.38-2.68 5.35-5.24 5.63.42.36.8 1.08.8 2.19v2.9c0 .31.21.67.8.55A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"
+                        title="LinkedIn" class="site-footer__icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M20.45 20.45h-3.55v-5.6c0-1.34-.02-3.05-1.86-3.05-1.86 0-2.14 1.45-2.14 2.95v5.7H9.35V9h3.4v1.56h.05c.47-.9 1.61-1.86 3.31-1.86 3.54 0 4.19 2.33 4.19 5.35v6.4zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter/X"
+                        title="Twitter/X" class="site-footer__icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M1.8 2h5.1l4.12 6L16.57 2h5.1l-7.43 9.04L22.4 22h-5.1l-4.47-6.51L7.9 22H2.8l7.92-10.12L1.8 2z" />
+                        </svg>
+                    </a>
+                </nav>
+            </div>
+
+            <div class="site-footer__cols">
+                <nav class="site-footer__col" aria-label="More">
+                    <h3 class="site-footer__heading">More</h3>
+                    <ul class="site-footer__links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="certifications.html">Certifications</a></li>
+                        <li><a href="awards.html">Awards</a></li>
+                        <li><a href="volunteering.html">Volunteering</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="site-footer__col" aria-label="Projects">
+                    <h3 class="site-footer__heading">Projects</h3>
+                    <ul class="site-footer__links">
+                        <li><a href="projects/aeroflow-traffic.html">Smart Traffic System</a></li>
+                        <li><a href="research.html#projects">All Projects</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="site-footer__col" aria-label="Articles">
+                    <h3 class="site-footer__heading">Articles</h3>
+                    <ul class="site-footer__links">
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="blog/future-computer-vision-african-robotics.html">Computer Vision in African
+                                Robotics</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="site-footer__bottom">
+            <p>&copy; <span id="footer-year"></span> David Prince Hope. All rights reserved.</p>
+            <p style="margin-top:0.25rem;font-size:0.85rem;">
+                <a href="contact.html" style="color:inherit;">Contact</a> •
+                <a href="#" style="color:inherit;">Privacy</a> •
+                <a href="#" style="color:inherit;">Terms</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+    <script>
+        // Set footer year
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+        // Enhanced fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.fade-in, .fade-in-delayed, .fade-in-delayed-more');
+            elements.forEach(el => observer.observe(el));
+        });
+    </script>
+
+    <!-- CV/Resume Modal copied to ensure identical behavior as About page -->
+    <div id="cv-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="cv-modal-title"
+        aria-hidden="true">
+        <div class="modal__backdrop" data-close="true"></div>
+        <div class="modal__dialog">
+            <div class="modal__header">
+                <h3 id="cv-modal-title" style="margin:0;">View Document</h3>
+                <button class="modal__close" type="button" aria-label="Close" data-close="true">×</button>
+            </div>
+            <div class="modal__body">
+                <div class="modal__choices">
+                    <button id="open-cv" class="btn">View CV</button>
+                    <button id="open-resume" class="btn">View Resume</button>
+                </div>
+                <div class="modal__viewer">
+                    <iframe id="doc-frame" class="modal__iframe" title="Document Viewer"></iframe>
+                </div>
+                <div class="modal__footer">
+                    <a href="contact.html" class="btn btn-outline" id="hire-me-btn">Hire Me</a>
+                    <a href="#" class="btn btn-outline" id="download-doc" download>Download</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        (function () {
+            var modal = document.getElementById('cv-modal');
+            var frame = document.getElementById('doc-frame');
+            var openCv = document.getElementById('open-cv');
+            var openResume = document.getElementById('open-resume');
+            var downloadLink = document.getElementById('download-doc');
+            var body = document.body;
+
+            function openDoc(src) {
+                if (frame.src !== src) {
+                    frame.src = src;
+                }
+                frame.style.display = 'block';
+                modal.classList.add('is-open');
+                body.classList.add('modal-open');
+            }
+
+            function setActive(which) {
+                openCv.classList.remove('is-active');
+                openResume.classList.remove('is-active');
+                if (which === 'cv') {
+                    openCv.classList.add('is-active');
+                    if (downloadLink) {
+                        downloadLink.href = 'data/davidprincehope_CV.pdf';
+                        downloadLink.setAttribute('download', 'David_Prince_Hope_CV.pdf');
+                    }
+                } else if (which === 'resume') {
+                    openResume.classList.add('is-active');
+                    if (downloadLink) {
+                        downloadLink.href = 'data/davidprincehope_Resume.pdf';
+                        downloadLink.setAttribute('download', 'David_Prince_Hope_Resume.pdf');
+                    }
+                }
+            }
+
+            function closeModal() {
+                modal.classList.remove('is-open');
+                body.classList.remove('modal-open');
+            }
+
+            modal.addEventListener('click', function (e) {
+                if (e.target && e.target.getAttribute('data-close') === 'true') {
+                    closeModal();
+                }
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+                    closeModal();
+                }
+            });
+
+            openCv.addEventListener('click', function () {
+                setActive('cv');
+                openDoc('data/davidprincehope_CV.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH');
+            });
+
+            openResume.addEventListener('click', function () {
+                setActive('resume');
+                openDoc('data/davidprincehope_Resume.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH');
+            });
+
+            var trigger = document.getElementById('view-cv-btn');
+            if (trigger) {
+                trigger.addEventListener('click', function () {
+                    setActive('cv');
+                    openDoc('data/davidprincehope_CV.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH');
+                });
+            }
+        })();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Autonomous IED Detection Robot — Rocker-Bogie rover with YOLOv11 AI vision for real-time threat detection" />
+    <title>Autonomous IED Detection Robot — David Prince Hope et al.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/dark-mode.css" />
+    <link rel="stylesheet" href="../css/color-enhancements.css" />
+    <style>
+        .section-header h1 {
+            font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+        }
+
+        .section-header h2 {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .main table {
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        @media (max-width: 1024px) {
+            .section-header>div {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 1.25rem !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-header>div {
+                grid-template-columns: 1fr !important;
+            }
+
+            #toc-layout {
+                grid-template-columns: 1fr !important;
+                gap: 1.25rem !important;
+            }
+
+            #toc-layout aside {
+                position: static !important;
+                top: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div data-include="../partials/header-projects.html"></div>
+    <main class="container layout">
+        <div data-include="../partials/sidebar.html"></div>
+        <section class="main">
+            <header class="section-header fade-in">
+                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: center;">
+                    <div>
+                        <h1 style="color: var(--color-primary); margin-bottom: 0.5rem;">
+                            Autonomous IED Detection Robot
+                        </h1>
+                        <h2 style="color: var(--color-muted); font-weight: 400; margin-bottom: 1rem;">
+                            Rocker-Bogie + AI Vision = Safer Missions
+                        </h2>
+                        <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                            A low-cost rover that conquers rough terrain and spots IEDs in real time—keeping humans out
+                            of danger. Built with PVC, ESP32, and YOLOv11, it navigates autonomously, avoids obstacles,
+                            and alerts instantly.
+                        </p>
+
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+                            <div>
+                                <strong style="color: var(--color-primary);">Team:</strong><br>
+                                <span>David Prince Hope<br>Aroge Damilare Daniel<br>Oladepo Teslim</span>
+                            </div>
+                            <div>
+                                <strong style="color: var(--color-primary);">Published:</strong><br>
+                                <span>2025</span>
+                            </div>
+                            <div>
+                                <strong style="color: var(--color-primary);">Institution:</strong><br>
+                                <span>Airforce Institute of Technology, Kaduna, Nigeria</span>
+                            </div>
+                            <div>
+                                <strong style="color: var(--color-primary);">GitHub:</strong><br>
+                                <a href="https://github.com/davidprincehope/ied-detection-robot" target="_blank"
+                                    rel="noopener" style="color: var(--color-primary);">View Repository →</a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <strong style="color: var(--color-primary); margin-bottom: 0.5rem; display: block;">
+                                Skills &amp; Technologies:
+                            </strong>
+                            <div style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem;">
+
+                                <div>
+                                    <strong>Languages:</strong> C++ , Python
+                                </div>
+
+                                <div>
+                                    <strong>Frameworks &amp; Libraries:</strong> OpenCV, YOLOv11, Tkinter, WebSocket
+                                </div>
+
+                                <div>
+                                    <strong>AI &amp; Vision:</strong> ESP32-CAM, Object Detection, Real-time Inference
+                                </div>
+
+                                <div>
+                                    <strong>Tools &amp; Design:</strong> SolidWorks, KiCAD (schematic), Soldering, PVC
+                                    Fabrication
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div style="justify-self: center;">
+                        <img src="/data/ied/rocker bogie.jpg" alt="Autonomous IED Detection Robot"
+                            style="width: 100%; max-width: 520px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);" />
+                    </div>
+                </div>
+            </header>
+
+            <div id="toc-layout" style="display: grid; grid-template-columns: 300px 1fr; gap: 2rem; margin-top: 2rem;">
+                <!-- Table of Contents -->
+                <aside class="card" style="height: fit-content; position: sticky; top: 100px;">
+                    <h3 style="color: var(--color-primary); margin-bottom: 1rem;">Table of Contents</h3>
+                    <nav style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <a href="#challenge"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">
+                            🎯 The Challenge
+                        </a>
+                        <a href="#what-i-built"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">
+                            🛠️ What I Built
+                        </a>
+                        <a href="#funding"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">
+                            💸 Funding Constraints
+                        </a>
+                        <a href="#system-design"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">
+                            🏗️ System Design
+                        </a>
+                        <a href="#materials"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">
+                            🧰 Materials Used
+                        </a>
+                        <a href="#technical-challenge"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">
+                            ⚙️ Technical Challenge
+                        </a>
+                        <a href="#solution"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">
+                            ⏱️ The Solution: Timer Interrupts
+                        </a>
+                        <a href="#takeaway"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">
+                            📚 Key Takeaway
+                        </a>
+                        <a href="#dev-images"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">
+                            📸 Development Images
+                        </a>
+                        <a href="#demo-videos"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">
+                            🎥 Demo Videos
+                        </a>
+                        <a href="#github"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">
+                            🔗 GitHub
+                        </a>
+                    </nav>
+                </aside>
+
+                <!-- Main Content -->
+                <div>
+
+                    <!-- The Challenge -->
+                    <section id="challenge" class="card fade-in">
+                        <h2>🎯 The Challenge</h2>
+                        <p>
+                            Nigeria, like much of Africa, has endured severe consequences in its ongoing battle against
+                            terrorism. Between 2011 and 2018, Boko Haram insurgents were directly responsible for the
+                            deaths of more than 27,000 civilians and military personnel (Vanda Felbab-Brown, 2018). In
+                            Borno State alone, over 1,320 IED-related incidents were recorded between 2011 and 2024,
+                            resulting in approximately 4,800 fatalities (ACLED; Truth Nigeria). These statistics
+                            highlight a critical need for innovative technologies that can detect and neutralize
+                            explosive threats before they claim more lives.
+                        </p>
+                    </section>
+
+                    <!-- What I Built -->
+                    <section id="what-i-built" class="card fade-in">
+                        <h2>🛠️ What I Built</h2>
+                        <p>
+                            In response to this challenge, I developed a prototype autonomous robot designed to detect
+                            Improvised Explosive Devices (IEDs). This project served as the culmination of my final-year
+                            studies and represented a true interdisciplinary engineering challenge combining artificial
+                            intelligence, control systems, electronics, and mechanical CAD design. My goal was to create
+                            a compact, efficient, and intelligent system capable of identifying potential threats and
+                            contributing to safer environments.
+                        </p>
+                    </section>
+
+                    <!-- Funding Constraints -->
+                    <section id="funding" class="card fade-in">
+                        <h2>💸 Funding Constraints</h2>
+                        <p>
+                            IED detection systems typically require extensive resources and field testing. Operating
+                            with a budget of roughly $100, I had to make every decision count. This limitation became an
+                            opportunity to innovate prioritizing essential functions, sourcing affordable components,
+                            and optimizing performance using readily available hardware. These constraints sharpened my
+                            creativity and deepened my understanding of embedded systems and system integration.
+                        </p>
+                    </section>
+
+                    <!-- System Design -->
+                    <section id="system-design" class="card fade-in">
+                        <h2>System Design</h2>
+                        <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+                            The ESP32 microcontroller serves as the central processing unit, leveraging its dual-core
+                            architecture and Wi-Fi nnectivity, and over 30 GPIO pins to orchestrate all
+                            system operations. It wirelessly communicates with the host PC and issues precise control
+                            signals to actuators. The ESP32-CAM module captures and streams live video frames to enable
+                            real-time computer vision processing using YOLOv11. Orientation tracking is handled by the
+                            MPU6050 IMU, which provides angular position data via I2C for PID-based heading correction.
+                            Obstacle detection relies on an HC-SR04 ultrasonic sensor mounted on an SG90 servo motor,
+                            enabling 180° environmental scanning. Motor control is managed through the L298N driver,
+                            which regulates speed and direction of six DC motors across the rocker-bogie chassis. An
+                            IRLZ44N MOSFET switches the high-current buzzer for threat alerts. Power is supplied by a
+                            4S2P 18650 lithium battery pack, stepped down to a stable 5V rail via an LM2596 buck
+                            converter, with a 4S BMS ensuring protection against overcharge and deep discharge. The
+                            entire structure is built from 25mm PVC pipes and elbows, forming a lightweight, durable,
+                            and terrain-adaptive frame.
+                        </p>
+
+                        <div style="text-align: center; margin: 1.5rem 0;">
+                            <img src="/data/ied/blockd.png" alt="System Block Diagram"
+                                style="width: 100%; max-width: 600px; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+                            <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--color-muted);">
+                                <strong>Figure 3:</strong> System block diagram illustrating sensor-to-actuator data
+                                flow and control hierarchy
+                            </p>
+                        </div>
+
+                        <!-- <blockquote
+                            style="margin: 1.5rem 0; padding: 1rem; background: var(--color-bg-secondary); border-left: 4px solid var(--color-primary); font-style: italic;">
+                            “All processing stays lightweight on the rover. Vision inference runs on the PC. Control
+                            stays real-time and reliable.”
+                        </blockquote> -->
+                    </section>
+                    <!-- Materials Used -->
+                    <!-- Materials Used -->
+                    <section id="materials" class="card fade-in">
+                        <h2>Materials Used</h2>
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="background: var(--color-bg-secondary);">
+                                    <th style="text-align: left; padding: 0.75rem; width: 50%;">Component</th>
+                                    <!-- <th style="text-align: left; padding: 0.75rem; width: 50%;">Component</th> -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border);">
+                                        *ESP32 Module
+                                    </td>
+                                    <td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border);">
+                                        SG90 Servo Motor
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border);">
+                                        ESP32-CAM
+                                    </td>
+                                    <td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border);">
+                                        L298N Motor Driver
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border);">
+                                        MPU6050 IMU
+                                    </td>
+                                    <td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border);">
+                                        Buck Converter
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border);">
+                                        Ultrasonic Sensor
+                                    </td>
+                                    <td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border);">
+                                        Lithium Battery
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border);">
+                                        IRLZ44N MOSFET
+                                    </td>
+                                    <td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border);">
+                                        Battery Management System
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.75rem;">
+                                        Buzzer
+                                    </td>
+                                    <td style="padding: 0.75rem;">
+                                        PVC Pipes and Elbows
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <!-- Technical Challenge -->
+                    <section id="technical-challenge" class="card fade-in">
+                        <h2>⚙️ Engineering Insights</h2>
+                        <p>
+                            Among the many technical challenges I encountered, one stood out: interference between the
+                            ultrasonic sensors and the servo motor. I noticed erratic movements in both systems, which
+                            compromised stability and sensor accuracy. Initially, I relied on existing software
+                            libraries to manage the hardware, but the interference persisted. This prompted me to
+                            abandon high-level abstractions and work directly with the microcontroller’s hardware
+                            registers.
+                        </p>
+                        <p>
+                            Through further investigation, I discovered the underlying issue: servo motors require a
+                            continuous stream of precise PWM signals (typically every 20 ms) to maintain position, while
+                            ultrasonic sensors operate by transmitting high-frequency sound pulses and timing their
+                            echoes. These overlapping timing operations within the main program loop were causing signal
+                            conflicts leading to jittery servo movements and unreliable distance readings.
+                        </p>
+                    </section>
+
+                    <!-- The Solution: Timer Interrupts -->
+                    <section id="solution" class="card fade-in">
+                        <h2>⏱️ The Breakthrough: Timer Interrupts</h2>
+                        <p>
+                            The breakthrough came when I utilized timer interrupts to decouple the timing-critical
+                            operations. By configuring a dedicated timer interrupt to refresh the servo position every
+                            20 ms through an Interrupt Service Routine (ISR), I ensured that servo control signals
+                            remained stable and consistent, independent of the main program loop. This allowed the
+                            ultrasonic sensors to operate asynchronously without interference—completely eliminating
+                            jitter and restoring accurate distance measurements.
+                        </p>
+                    </section>
+
+
+                    <!-- Key Takeaway -->
+                    <section id="takeaway" class="card fade-in">
+                        <h2>📚 Key Takeaway</h2>
+                        <p>
+                            This experience reinforced a vital engineering lesson: understanding hardware-level
+                            operations is essential when working with embedded systems. Abstraction layers can simplify
+                            development, but true optimization often requires diving deeper into the fundamentals where
+                            precision and control truly matter.
+                        </p>
+                    </section>
+
+                    <!-- Development Images -->
+                    <section id="dev-images" class="card fade-in">
+                        <h2>📸 Development Images</h2>
+                        <div class="gallery">
+                            <a href="#cad"><img src="/data/ied/Soldering1.jpg" alt="Soldering" /></a>
+                            <a href="#circuit"><img src="/data/ied/WhatsApp Image 2025-08-06 at 16.43.58_0d13845a.jpg"
+                                    alt="ESP32 Wiring" /></a>
+                            <a href="#build"><img src="/data/ied/WhatsApp Image 2025-08-06 at 16.44.00_24bc1c60.jpg"
+                                    alt="PVC Chassis Assembly" /></a>
+                            <a href="#robot"><img src="/data/ied/WhatsApp Image 2025-09-30 at 07.13.56_df499908.jpg"
+                                    alt="Final Robot in Action" /></a>
+                            <a href="#gui"><img src="/data/ied/Screenshot (342).png"
+                                    alt="Live Detection Alert GUI" /></a>
+                            <a href="#gui"><img src="/data/ied/rocker bogie.jpg" alt="Live Detection Alert GUI" /></a>
+                        </div>
+
+                        <!-- Lightbox -->
+                        <div id="cad" class="lightbox"><a class="close" href="#">×</a><img
+                                src="../images/projects/ied-cad.jpg" alt="CAD large" /></div>
+                        <div id="circuit" class="lightbox"><a class="close" href="#">×</a><img
+                                src="../images/projects/ied-circuit.jpg" alt="Circuit large" /></div>
+                        <div id="build" class="lightbox"><a class="close" href="#">×</a><img
+                                src="../images/projects/ied-build.jpg" alt="Build large" /></div>
+                        <div id="robot" class="lightbox"><a class="close" href="#">×</a><img
+                                src="../images/projects/ied-robot.jpg" alt="Robot large" /></div>
+                        <div id="gui" class="lightbox"><a class="close" href="#">×</a><img
+                                src="../images/projects/ied-gui.jpg" alt="GUI large" /></div>
+                    </section>
+
+                    <!-- Demo Videos -->
+                    <section id="demo-videos" class="card fade-in">
+                        <h2>🎥 Demo Videos</h2>
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+                            <div>
+                                <div
+                                    style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-md);">
+                                    <iframe src="https://www.youtube.com/embed/x9q6vZJwjng" title="PID control demo"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen
+                                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+                                </div>
+                                <p style="margin-top: 0.5rem; font-weight: 600;">PID control
+                                </p>
+                            </div>
+                            <div>
+                                <div
+                                    style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-md);">
+                                    <iframe src="https://www.youtube.com/embed/xY7gERH_5dI?si=9d3GO_64ZFwa5IzX"
+                                        title="IED Alert Demo" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen
+                                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+                                </div>
+                                <p><strong>Case 1:</strong> Moves Forward → Detects Grenade Model → Stops + Buzzes</p>
+                                <p><strong>Case 2:</strong> Moves Forward → Low Detection Confidence Score (Biscuit) →
+                                    Avoids</p>
+                            </div>
+                            <div>
+                                <div
+                                    style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-md);">
+                                    <iframe src="https://www.youtube.com/embed/1mgYl4o5gjQ" title="Manual Drive Demo"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen
+                                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+                                </div>
+                                <p style="margin-top: 0.5rem; font-weight: 600;">Obstacle Avoidance </p>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <!-- GitHub -->
+                    <section id="github" class="card fade-in">
+                        <h2>🔗 GitHub</h2>
+                        <p>Explore the code, issues, and updates on GitHub. You can also download the full project ZIP.
+                        </p>
+                        <div style="display:flex; gap: 1rem; flex-wrap: wrap;">
+                            <a href="https://github.com/davidprincehope/ied-detection-robot" target="_blank"
+                                class="btn btn-primary">View Repository →</a>
+                            <a href="https://github.com/davidprincehope/ied-detection-robot/archive/refs/heads/main.zip"
+                                target="_blank" class="btn">Download Full Project ZIP</a>
+                        </div>
+                    </section>
+
+                    <footer style="margin-top: 2rem; font-size: 0.9rem; color: var(--color-muted); text-align: center;">
+                        <p><strong>Thanks:</strong> Engr Sheshi, family, AFIT Kaduna</p>
+                    </footer>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer" aria-label="Website footer">
+    <div class="site-footer__inner">
+        <div class="site-footer__brand">
+            <a href="../index.html" class="site-footer__logo" aria-label="Home">
+                <span class="site-footer__logo-mark">●</span>
+                <span class="site-footer__logo-text">David Prince Hope</span>
+            </a>
+            <p class="site-footer__tagline">Mechatronics • AI • Robotics</p>
+            <nav class="site-footer__socials" aria-label="Social links">
+                <a href="https://github.com/davidprincehope" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub" class="site-footer__icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.38 7.86 10.9.58.11.79-.25.79-.55v-2.1c-3.2.7-3.87-1.36-3.87-1.36-.53-1.35-1.3-1.7-1.3-1.7-1.06-.73.08-.72.08-.72 1.18.08 1.8 1.2 1.8 1.2 1.04 1.79 2.73 1.27 3.4.97.1-.75.4-1.26.72-1.55-2.55-.29-5.22-1.27-5.22-5.64 0-1.25.45-2.26 1.2-3.05-.12-.29-.52-1.44.12-3.01 0 0 .98-.31 3.2 1.19.92-.25 1.9-.39 2.88-.39s1.96.14 2.88.39c2.22-1.5 3.2-1.19 3.2-1.19.64 1.57.24 2.72.12 3.01.75.79 1.2 1.8 1.2 3.05 0 4.38-2.68 5.35-5.24 5.63.42.36.8 1.08.8 2.19v2.9c0 .31.21.67.8.55A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn" class="site-footer__icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M20.45 20.45h-3.55v-5.6c0-1.34-.02-3.05-1.86-3.05-1.86 0-2.14 1.45-2.14 2.95v5.7H9.35V9h3.4v1.56h.05c.47-.9 1.61-1.86 3.31-1.86 3.54 0 4.19 2.33 4.19 5.35v6.4zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/>
+                    </svg>
+                </a>
+                <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter/X" title="Twitter/X" class="site-footer__icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M1.8 2h5.1l4.12 6L16.57 2h5.1l-7.43 9.04L22.4 22h-5.1l-4.47-6.51L7.9 22H2.8l7.92-10.12L1.8 2z"/>
+                    </svg>
+                </a>
+            </nav>
+        </div>
+        <div class="site-footer__cols">
+            <nav class="site-footer__col" aria-label="More">
+                <h3 class="site-footer__heading">More</h3>
+                <ul class="site-footer__links">
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../research.html">Research</a></li>
+                    <li><a href="../certifications.html">Certifications</a></li>
+                    <li><a href="../awards.html">Awards</a></li>
+                    <li><a href="../volunteering.html">Volunteering</a></li>
+                </ul>
+            </nav>
+            <nav class="site-footer__col" aria-label="Projects">
+                <h3 class="site-footer__heading">Projects</h3>
+                <ul class="site-footer__links">
+                    <li><a href="./aeroflow-traffic.html">Smart Traffic System</a></li>
+                    <li><a href="./">All Projects</a></li>
+                </ul>
+            </nav>
+            <nav class="site-footer__col" aria-label="Articles">
+                <h3 class="site-footer__heading">Articles</h3>
+                <ul class="site-footer__links">
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../blog/future-computer-vision-african-robotics.html">Computer Vision in African Robotics</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="site-footer__bottom">
+        <p>&copy; <span id="footer-year"></span> David Prince Hope. All rights reserved.</p>
+        <p style="margin-top:0.25rem;font-size:0.85rem;">
+            <a href="../contact.html" style="color:inherit;">Contact</a> • 
+            <a href="#" style="color:inherit;">Privacy</a> • 
+            <a href="#" style="color:inherit;">Terms</a>
+        </p>
+    </div>
+</footer>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>
+

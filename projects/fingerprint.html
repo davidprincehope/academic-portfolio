@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Biometric Examination Authentication System - Fingerprint-Based Student Verification for Academic Integrity" />
+    <title>Biometric Examination Authentication System - [Your Name]</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/dark-mode.css" />
+    <link rel="stylesheet" href="../css/color-enhancements.css" />
+    <style>
+        .section-header h1 {
+            font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+        }
+
+        .section-header h2 {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .main table {
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        @media (max-width: 1024px) {
+            .section-header>div {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 1.25rem !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-header>div {
+                grid-template-columns: 1fr !important;
+            }
+
+            #toc-layout {
+                grid-template-columns: 1fr !important;
+                gap: 1.25rem !important;
+            }
+
+            #toc-layout aside {
+                position: static !important;
+                top: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div data-include="../partials/header-projects.html"></div>
+    <main class="container layout">
+        <div data-include="../partials/sidebar.html"></div>
+        <section class="main">
+            <header class="section-header fade-in">
+                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: center;">
+                    <div>
+                        <h1 style="color: var(--color-primary); margin-bottom: 0.5rem;">Biometric Examination
+                            Authentication System</h1>
+                        <h2 style="color: var(--color-muted); font-weight: 400; margin-bottom: 1rem;">
+                            Fingerprint-Based Student Verification for Academic Integrity </h2>
+                        <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                            A secure examination authentication system using fingerprint biometrics to verify student
+                            identity during exams, eliminating impersonation.
+                        </p>
+
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+                            <div>
+                                <strong style="color: var(--color-primary);">Contributors:</strong><br>
+                                <span>David Prince Hope</span>
+                            </div>
+                            <div>
+                                <strong style="color: var(--color-primary);">GitHub:</strong><br>
+                                <a href="https://github.com/davidprincehope/Fingerprint-Verification-System-"
+                                    target="_blank" rel="noopener" style="color: var(--color-primary);">View
+                                    Repository →</a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <strong style="color: var(--color-primary); margin-bottom: 0.5rem; display: block;">Skills
+                                &amp; Technologies:</strong>
+                            <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.95rem;">
+                                <div>C/C++, Arduino</div>
+                                <div>Embedded Systems, Biometric Systems</div>
+                                <div>I2C Communication, Security, Hardware Integration</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="justify-self: center;"></div>
+                </div>
+            </header>
+
+            <div id="toc-layout" style="display: grid; grid-template-columns: 300px 1fr; gap: 2rem; margin-top: 2rem;">
+                <!-- Table of Contents -->
+                <aside class="card" style="height: fit-content; position: sticky; top: 100px;">
+                    <h3 style="color: var(--color-primary); margin-bottom: 1rem;">Table of Contents</h3>
+                    <nav style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <a href="#challenge"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">🎯
+                            The Challenge</a>
+                        <a href="#what-i-built"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">🔧
+                            What I Built</a>
+                        <a href="#system-architecture"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">🏗️
+                            System Architecture</a>
+                        <a href="#development-images"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">📸
+                            Development Images</a>
+                        <a href="#demo-videos"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">🎥
+                            Demo Videos</a>
+                    </nav>
+                </aside>
+
+                <!-- Main Content -->
+                <div>
+                    <section id="challenge" class="card fade-in">
+                        <h2>🎯 The Challenge</h2>
+                        <p>Examination malpractice costs Nigerian students, institutions, and the entire education
+                            system its credibility. One of the most persistent forms of academic dishonesty is
+                            impersonation - students paying others to write exams on their behalf, undermining the
+                            fundamental purpose of academic assessment.</p>
+                        <p>Traditional verification methods fail consistently. Student ID cards can be forged or
+                            borrowed. Invigilators managing 50+ students in examination halls cannot memorize every face
+                            or cross-reference photos effectively. Manual attendance sheets can be signed by anyone. The
+                            result? Rampant impersonation that devalues legitimate academic achievement.</p>
+                        <p>The scale of the problem is staggering: Nigerian universities and examination bodies report
+                            significant incidents of impersonation annually, leading to examination cancellations,
+                            student expulsions, and erosion of degree credibility both locally and internationally. When
+                            employers cannot trust that graduates actually earned their qualifications, the entire
+                            education system suffers.</p>
+                        <p>Biometric systems offer a definitive solution: you cannot send someone else's fingerprint to
+                            write your exam. Your identity becomes impossible to fake. Yet commercial biometric
+                            examination systems designed for large-scale deployment cost millions of naira and require
+                            specialized infrastructure incompatible with resource-constrained institutions.</p>
+                        <p>For Nigerian universities, polytechnics, and secondary schools - particularly those in
+                            underserved regions - the choice has been between expensive commercial systems they cannot
+                            afford or continuing to rely on easily-defeated manual verification.</p>
+                        <p>The objective: Design an affordable, portable biometric verification system specifically for
+                            examination scenarios - capable of enrolling students at registration and verifying their
+                            identity at exam entry, creating an unforgeable audit trail that protects academic
+                            integrity.</p>
+                    </section>
+
+                    <section id="what-i-built" class="card fade-in">
+                        <h2>🔧 What I Built</h2>
+                        <p>I developed a fingerprint-based examination authentication system with dual-factor enrollment
+                            security, 256-student capacity per unit, and real-time verification feedback designed
+                            specifically for exam hall deployment.</p>
+                        <h3>System Overview:</h3>
+                        <p>Students enroll their fingerprints during course registration using password-protected
+                            administrative access. During examinations, they simply place their finger on the sensor -
+                            the system verifies their identity within 2 seconds and logs their attendance with their
+                            student ID displayed on screen.</p>
+                        <h3>Core Features:</h3>
+                        <ul>
+                            <li>Dual-factor enrollment: Fingerprint registration requires password authentication,
+                                ensuring only authorized administrators (lecturers, exam officers) can enroll students
+                                into the system database.</li>
+                            <li>Student ID mapping: Each fingerprint is linked to a unique student ID (0-255 per
+                                device), displayed instantly upon successful verification - enabling invigilators to
+                                confirm identity and mark attendance simultaneously.</li>
+                            <li>Template-based security: The system stores mathematical fingerprint representations -
+                                not actual images - making it impossible to reconstruct or steal biometric data from the
+                                device.</li>
+                            <li>Portable deployment: Compact design allows multiple units to be distributed across
+                                examination halls, with each device operating independently without network
+                                infrastructure requirements.</li>
+                            <li>Multi-modal feedback: LCD display shows verification status and student ID, serial
+                                output logs all verification attempts for audit trails, and buzzer provides audible
+                                confirmation - critical in noisy exam environments.</li>
+                        </ul>
+                        <h3>Practical Impact:</h3>
+                        <p>Eliminates impersonation by making identity verification instantaneous and unforgeable.
+                            Invigilators can process 30+ students per minute at exam hall entry, creating an accurate
+                            attendance record that cannot be falsified. Students who enrolled their fingerprints are the
+                            only ones who can write the exam - no exceptions, no workarounds.</p>
+                    </section>
+
+                    <section id="system-architecture" class="card fade-in">
+                        <h2>🏗️ System Architecture</h2>
+                        <h3>Biometric Sensor</h3>
+                        <p>An optical fingerprint sensor captures ridge patterns using frustrated total internal
+                            reflection (FTIR) imaging. The sensor communicates via UART at 57,600 baud, performing
+                            onboard template generation and matching.</p>
+                        <p>Enrollment workflow for examination use:</p>
+                        <ol>
+                            <li>Administrator enters password</li>
+                            <li>System prompts for student ID (0-255)</li>
+                            <li>Student places finger twice for dual capture</li>
+                            <li>System validates template consistency</li>
+                            <li>Fingerprint linked to student ID and stored</li>
+                        </ol>
+                        <p>Verification during examination:</p>
+                        <ol>
+                            <li>Student places finger on sensor</li>
+                            <li>System captures and generates template</li>
+                            <li>Database searched for match</li>
+                            <li>Student ID displayed if verified</li>
+                            <li>Buzzer confirms successful authentication</li>
+                        </ol>
+                        <p>Template storage: Up to 256 students per device stored in non-volatile EEPROM - surviving
+                            power cycles and enabling deployment in areas with unreliable electricity.</p>
+                        <h3>User Interface</h3>
+                        <p>4×4 Matrix Keypad (I²C):</p>
+                        <ul>
+                            <li>1: Enrollment mode (administrator only)</li>
+                            <li>2: Verification mode (exam use)</li>
+                            <li>*: Database clear (administrative reset)</li>
+                            <li>#: Confirm/Enter</li>
+                            <li>0-9: Student ID and password entry</li>
+                        </ul>
+                        <p>16×2 LCD Display (I²C):</p>
+                        <ul>
+                            <li>Real-time prompts for students and administrators</li>
+                            <li>Verification status: "VERIFIED!" or "Not Found"</li>
+                            <li>Student ID display: "U19EE10XX" format</li>
+                            <li>Clear feedback in bright exam hall environments</li>
+                        </ul>
+                        <p>Piezo Buzzer:</p>
+                        <ul>
+                            <li>Audible confirmation of successful verification</li>
+                            <li>Critical in noisy exam halls where visual-only feedback may be missed</li>
+                            <li>Alerts invigilator that student is verified without requiring continuous display
+                                monitoring</li>
+                        </ul>
+                        <h3>Security Architecture</h3>
+                        <p>Password-protected enrollment:</p>
+                        <pre><code>Exam Setup Phase:
+Administrator → Password Entry → Student ID Assignment → 
+Dual Fingerprint Capture → Template Storage
+
+Examination Phase:
+Student → Fingerprint Placement → Verification → 
+ID Display → Attendance Logged</code></pre>
+                        <p>Administrative control: Only personnel with the password (lecturers, exam officers) can
+                            enroll new students, preventing unauthorized additions to the database.</p>
+                        <p>Daily verification simplicity: Students only need to place their finger - no passwords, no ID
+                            cards, no signatures. Instant verification reduces exam hall congestion and entry
+                            bottlenecks.</p>
+                        <p>Audit trail capability: Serial output logs every verification attempt with timestamp and
+                            result - providing evidence of who accessed the exam and when, critical for academic
+                            integrity investigations.</p>
+                        <h3>Examination Deployment Model</h3>
+                        <p>Pre-exam setup:</p>
+                        <ol>
+                            <li>Administrators enroll students during course registration</li>
+                            <li>Each student linked to their matriculation/ID number</li>
+                            <li>Database backed up for redundancy</li>
+                        </ol>
+                        <p>Exam day operation:</p>
+                        <ol>
+                            <li>Device powered on at exam hall entrance</li>
+                            <li>Students verify identity before entering</li>
+                            <li>Invigilator confirms ID on display matches exam roster</li>
+                            <li>Successful verification = entry permitted</li>
+                            <li>Failed verification = identity investigation required</li>
+                        </ol>
+                    </section>
+
+                    <section id="demo-videos" class="card fade-in">
+                        <h2>🎥 Demo Videos</h2>
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+                            <div>
+                                <div
+                                    style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-md);">
+                                    <iframe src=" https://www.youtube.com/embed/uo-jE8OQEi8"
+                                        title="Emergency detection → instant green override" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen
+                                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+
+                    <!-- GitHub -->
+                    <section id="github" class="card fade-in">
+                        <h2>🔗 GitHub</h2>
+                        <p>Explore the code, issues, and updates on GitHub. You can also download the full project ZIP.
+                        </p>
+                        <div style="display:flex; gap: 1rem; flex-wrap: wrap;">
+                            <a href="https://github.com/davidprincehope/Fingerprint-Verification-System-"
+                                target="_blank" class="btn btn-primary">View Repository →</a>
+                            <a href="https://github.com/davidprincehope/Fingerprint-Verification-System-/archive/refs/heads/main.zip"
+                                target="_blank" class="btn">Download Full Project ZIP</a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div data-include="../partials/footer-nested.html"></div>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

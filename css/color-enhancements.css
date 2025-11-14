@@ -1,0 +1,324 @@
+/* Additional Color Enhancements for Academic Portfolio */
+
+/* Blue card accents */
+.card:nth-child(3n+1) {
+    border-left: 4px solid var(--color-primary);
+}
+
+.card:nth-child(3n+2) {
+    border-left: 4px solid var(--color-accent-cyan);
+}
+
+.card:nth-child(3n+3) {
+    border-left: 4px solid var(--color-accent-teal);
+}
+
+/* Project category colors - Blue theme */
+.preview-card--robotics {
+    border-top: 4px solid var(--color-primary);
+}
+
+.preview-card--ai {
+    border-top: 4px solid var(--color-accent-cyan);
+}
+
+.preview-card--iot {
+    border-top: 4px solid var(--color-accent-blue-dark);
+}
+
+.preview-card--web {
+    border-top: 4px solid var(--color-accent-teal);
+}
+
+/* Colorful section headers */
+.section-header h2::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 1.5em;
+    background: var(--gradient-primary);
+    margin-right: 0.75rem;
+    border-radius: 2px;
+    vertical-align: middle;
+}
+
+/* Animated gradient text for emphasis */
+.gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+/* Blue chip variations */
+.chip--primary {
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.1) 0%, rgba(0, 153, 255, 0.1) 100%);
+    border-color: rgba(0, 123, 255, 0.3);
+    color: var(--color-primary);
+}
+
+.chip--success {
+    background: linear-gradient(135deg, rgba(0, 153, 255, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%);
+    border-color: rgba(0, 153, 255, 0.3);
+    color: var(--color-secondary);
+}
+
+.chip--info {
+    background: linear-gradient(135deg, rgba(79, 172, 254, 0.1) 0%, rgba(0, 242, 254, 0.1) 100%);
+    border-color: rgba(79, 172, 254, 0.3);
+    color: var(--color-accent-blue-light);
+}
+
+.chip--teal {
+    background: linear-gradient(135deg, rgba(20, 184, 166, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%);
+    border-color: rgba(20, 184, 166, 0.3);
+    color: var(--color-accent-teal);
+}
+
+/* Blue hover states for links */
+a:hover {
+    transition: color var(--transition-fast);
+}
+
+/* Skill badges with colors */
+.skill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, rgba(79, 172, 254, 0.1) 0%, rgba(0, 242, 254, 0.1) 100%);
+    border: 1px solid rgba(79, 172, 254, 0.2);
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all var(--transition-base);
+}
+
+.skill-badge:hover {
+    background: var(--gradient-primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+/* Blue status indicators */
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 0.5rem;
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.status-indicator--active {
+    background: var(--color-accent-cyan);
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.status-indicator--pending {
+    background: var(--color-primary);
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+.status-indicator--completed {
+    background: var(--color-accent-teal);
+    box-shadow: 0 0 10px rgba(20, 184, 166, 0.5);
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.1);
+    }
+}
+
+/* Blue-themed footer icons */
+.site-footer__icon:nth-child(1):hover {
+    background: var(--gradient-primary);
+    border-color: var(--color-primary);
+    color: white;
+}
+
+.site-footer__icon:nth-child(2):hover {
+    background: var(--gradient-secondary);
+    border-color: var(--color-accent-cyan);
+    color: white;
+}
+
+.site-footer__icon:nth-child(3):hover {
+    background: var(--gradient-blue);
+    border-color: var(--color-accent-blue-dark);
+    color: white;
+}
+
+.site-footer__icon:nth-child(4):hover {
+    background: var(--gradient-ocean);
+    border-color: var(--color-accent-teal);
+    color: white;
+}
+
+/* Blue navigation highlight */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+    transition: width var(--transition-base);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 80%;
+}
+
+/* Blue progress bars */
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 999px;
+    overflow: hidden;
+    position: relative;
+}
+
+html.theme-dark .progress-bar {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.progress-bar__fill {
+    height: 100%;
+    background: var(--gradient-primary);
+    border-radius: 999px;
+    transition: width 1s ease;
+    position: relative;
+}
+
+.progress-bar__fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Blue timeline items */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 0.5rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    box-shadow: 0 0 12px rgba(0, 123, 255, 0.5);
+}
+
+/* Blue alert/info boxes */
+.info-box {
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-md);
+    border-left: 4px solid;
+    margin: 1rem 0;
+}
+
+.info-box--info {
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.05) 0%, rgba(0, 153, 255, 0.05) 100%);
+    border-left-color: var(--color-primary);
+    color: var(--color-text);
+}
+
+.info-box--success {
+    background: linear-gradient(135deg, rgba(79, 172, 254, 0.05) 0%, rgba(0, 242, 254, 0.05) 100%);
+    border-left-color: var(--color-accent-blue-light);
+    color: var(--color-text);
+}
+
+.info-box--highlight {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(20, 184, 166, 0.05) 100%);
+    border-left-color: var(--color-accent-cyan);
+    color: var(--color-text);
+}
+
+/* Animated background for sections */
+.section--animated {
+    position: relative;
+    overflow: hidden;
+}
+
+.section--animated::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 123, 255, 0.03) 0%, transparent 70%);
+    animation: rotate-gradient 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes rotate-gradient {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Blue numbered lists */
+.numbered-list {
+    counter-reset: item;
+    list-style: none;
+    padding-left: 0;
+}
+
+.numbered-list li {
+    counter-increment: item;
+    position: relative;
+    padding-left: 3rem;
+    margin-bottom: 1rem;
+}
+
+.numbered-list li::before {
+    content: counter(item);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2rem;
+    height: 2rem;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+}

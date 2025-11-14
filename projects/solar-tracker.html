@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Single-Axis Solar Tracker — Intelligent solar panel positioning using dual LDR sensors and PID control for optimal alignment." />
+    <title>Single-Axis Solar Tracker — David Prince Hope</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/dark-mode.css" />
+    <link rel="stylesheet" href="../css/color-enhancements.css" />
+    <style>
+        .section-header h1 {
+            font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+        }
+
+        .section-header h2 {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .main table {
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        @media (max-width: 1024px) {
+            .section-header>div {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 1.25rem !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-header>div {
+                grid-template-columns: 1fr !important;
+            }
+
+            #toc-layout {
+                grid-template-columns: 1fr !important;
+                gap: 1.25rem !important;
+            }
+
+            #toc-layout aside {
+                position: static !important;
+                top: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div data-include="../partials/header-projects.html"></div>
+    <main class="container layout">
+        <div data-include="../partials/sidebar.html"></div>
+        <section class="main">
+            <header class="section-header fade-in">
+                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: center;">
+                    <div>
+                        <h1 style="color: var(--color-primary); margin-bottom: 0.5rem;">Single-Axis Solar Tracker</h1>
+                        <h2 style="color: var(--color-muted); font-weight: 400; margin-bottom: 1rem;">
+                            Solar Tracker </h2>
+                        <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                            Automated single-axis solar tracker using dual LDR sensors and PID control to maintain
+                            optimal panel alignment with the sun, maximizing energy yield.
+                        </p>
+
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+                            <div>
+                                <strong style="color: var(--color-primary);">Team:</strong><br>
+                                <span>David Prince Hope
+                                    <p>Oladepo Teslim</p>
+                                </span>
+                            </div>
+                            <div>
+                                <strong style="color: var(--color-primary);">Published:</strong><br>
+                                <span>June</span>
+                            </div>
+                            <div>
+                                <strong style="color: var(--color-primary);">Institution:</strong><br>
+                                <span>Airforce Institute of Technology, Kaduna, Nigeria</span>
+                            </div>
+                            <div>
+                                <div>
+                                    <strong style="color: var(--color-primary);">GitHub:</strong><br>
+                                    <a href="https://github.com/davidprincehope/PID-SIngle-Axis-Solar-Tracker"
+                                        target="_blank" rel="noopener" style="color: var(--color-primary);">View
+                                        Repository →</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <strong style="color: var(--color-primary); margin-bottom: 0.5rem; display: block;">Skills
+                                &amp; Technologies:</strong>
+                            <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.95rem;">
+                                <div>C/C++, Arduino</div>
+                                <div>PID Control, Embedded Systems</div>
+                                <div>Servo Control, Renewable Energy, Electronics</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="justify-self: center;"></div>
+                </div>
+            </header>
+
+            <div id="toc-layout" style="display: grid; grid-template-columns: 300px 1fr; gap: 2rem; margin-top: 2rem;">
+                <!-- Table of Contents -->
+                <aside class="card" style="height: fit-content; position: sticky; top: 100px;">
+                    <h3 style="color: var(--color-primary); margin-bottom: 1rem;">Table of Contents</h3>
+                    <nav style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <a href="#challenge"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">🎯
+                            Challenge</a>
+                        <a href="#system-overview"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">🔧
+                            System Overview</a>
+                        <a href="#technical-implementation"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">🏗️
+                            Technical Implementation</a>
+                        <a href="#light-noise-mitigation"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">⚠️
+                            Light Sensing Noise Mitigation</a>
+                        <a href="#future-extensions"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">🚀
+                            Future Extensions</a>
+                        <a href="#images"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">📸
+                            Images</a>
+                        <a href="#demo-videos"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">🎥
+                            Demos</a>
+                        <a href="#project-files"
+                            style="color: var(--color-text); text-decoration: none; padding: 0.5rem; border-radius: var(--radius-sm);">📁
+                            Files</a>
+                    </nav>
+                </aside>
+
+                <!-- Main Content -->
+                <div>
+                    <section id="challenge" class="card fade-in">
+                        <h2>🎯 The Challenge</h2>
+                        <p>In Africa's sun-rich regions, with annual solar irradiance of 2,000-2,500 kWh/m² the world's
+                            highest, fixed solar panels waste up to 25% of potential energy due to the sun's shifting
+                            path. With solar trackers, energy generation can be increased. In countries like Nigeria,
+                            only about 1.4 GW of off-grid solar was deployed in the past year amid a total available
+                            grid capacity of around 5 GW, yet demand exceeds 25 GW, so every watt of energy generated
+                            counts</p>
+                    </section>
+
+                    <section id="system-overview" class="card fade-in">
+                        <h2>🔧 System Overview</h2>
+                        <ul>
+                            <li><strong>Sensors:</strong> Dual LDRs in differential configuration</li>
+                            <li><strong>Actuator:</strong> SG90 servo (150° range: 30°–180°)</li>
+                            <li><strong>Control:</strong> Arduino-based PID with dead-zone and night reset</li>
+                            <li><strong>Monitoring:</strong> Real-time panel voltage via voltage divider + LCD</li>
+                            <li><strong>Result:</strong> 25–35% energy increase vs. fixed tilt</li>
+                        </ul>
+                    </section>
+
+                    <!-- Technical Implementation -->
+                    <section id="technical-implementation" class="card fade-in">
+                        <h2>🏗️ Technical Implementation</h2>
+                        <p style="margin-top:0.5rem;">Signal chain: dual LDRs → differential error → filtering → PID →
+                            servo mapping → update cycle.</p>
+                        <h3 style="margin-top:0.75rem;">Differential Light Sensing</h3>
+                        <p>The error is computed as <em>(LDR_right − LDR_left)/1023 × 100</em> resulting in −100…+100
+                            where 0 is perfect alignment.</p>
+                        <ul>
+                            <li>LDR resistance ↓ as irradiance ↑; read via voltage divider into 10‑bit ADC (0–1023)</li>
+                            <li>Optical barrier prevents cross-illumination</li>
+                        </ul>
+                        <h3>Filtering</h3>
+                        <p>50-sample moving average on the error to suppress noise (see ⚠️ <a
+                                href="#light-noise-mitigation">Noise Mitigation</a>).</p>
+                        <h3>PID Control</h3>
+                        <ul>
+                            <li>Kp = 0.10</li>
+                            <li>Ki = 2.5</li>
+                            <li>Kd = 0.3</li>
+                        </ul>
+                        <p><strong>Dead zone:</strong> |error| &lt; 2 → hold position</p>
+                        <h3>Update Cycle</h3>
+                        <p>Loop every 100 ms (~0.25°/min solar azimuth) to minimize servo wear while tracking.</p>
+                        <h3>Servo Mapping</h3>
+                        <p>30° → sunrise (east) • 90° → solar noon • 180° → sunset (west)</p>
+                        <h3>Night Reset</h3>
+                        <p>If both LDRs &lt; 50 (~5% FS) set servo to 90° (neutral east–west).</p>
+                        <h3>Voltage Monitoring</h3>
+                        <p>Panel voltage = ADC(A7) × Vref/1023 × divider ratio; shown on 16×2 LCD.</p>
+                    </section>
+
+                    <section id="demo-videos" class="card fade-in">
+                        <h2>🎥 Demo Videos</h2>
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+                            <div>
+                                <div
+                                    style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-md);">
+                                    <iframe src="https://www.youtube.com/embed/vBKQHqXGHJg"
+                                        title="Single-Axis Solar Tracker — time-lapse tracking" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen
+                                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- GitHub -->
+                    <section id="github" class="card fade-in">
+                        <h2>🔗 GitHub</h2>
+                        <p>Explore the code, issues, and updates on GitHub. You can also download the full project ZIP.
+                        </p>
+                        <div style="display:flex; gap: 1rem; flex-wrap: wrap;">
+                            <a href="https://github.com/davidprincehope/PID-SIngle-Axis-Solar-Tracker" target="_blank"
+                                class="btn btn-primary">View Repository →</a>
+                            <a href="https://github.com/davidprincehope/PID-SIngle-Axis-Solar-Tracker/archive/refs/heads/main.zip"
+                                target="_blank" class="btn">Download Full Project ZIP</a>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </section>
+    </main>
+    <div data-include="../partials/footer-nested.html"></div>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>
