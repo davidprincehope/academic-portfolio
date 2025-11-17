@@ -19,12 +19,13 @@
 
     function initTheme() {
         const saved = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        // Set dark mode as default regardless of system preference
         const apply = (theme) => {
             document.documentElement.classList.toggle('theme-dark', theme === 'dark');
             localStorage.setItem('theme', theme);
         };
-        apply(saved || (prefersDark ? 'dark' : 'light'));
+        // Default to 'dark' if no saved preference exists
+        apply(saved || 'dark');
 
         document.addEventListener('click', (e) => {
             const t = e.target;
